@@ -24,13 +24,13 @@
                 <div class="text-3xl font-bold text-slate-800 mb-10">Have a nice day</div>
                 <form action="">
                     <input type="email" class="w-full py-4 px-3 rounded-2xl mb-4 bg-blue-100/50 hover:outline-blue-700  focus:outline-blue-700 text-slate-700" placeholder="Masukan Kode Unik E-Garansi">
-                    <button class="w-full py-4 px-3 rounded-full bg-blue-700 hover:bg-blue-900 text-white">Cek Kartu Garansi</button>
+                    <button class="w-full py-4 px-3 rounded-full bg-blue-700 hover:bg-blue-900 text-white mb-5">Cek Kartu Garansi</button>
                 </form>
             </div>
         </div>
         <!-- End section check e-garansi -->
         <!-- Section main menu -->
-        <div class="px-2 py-2 h-[180px] mb-2">
+        <div class="bg-[#f3f3ff] px-2 py-2 h-[180px] mb-2">
             <div class="flex flex-col">
                 <div class="text-xl font-semibold text-slate-800 mb-5">Menu Utama</div>
                 <div class="flex flex-row gap-2 justify-around text-center">
@@ -42,10 +42,12 @@
                         <div class="w-14 py-3 h-14 bg-blue-100/50 rounded-full text-center text-2xl"><i class="fa-solid fa-money-check-dollar" style="color: #1952b3;"></i></div>
                         <div class="text-sm">E-Nota</div>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-14 py-3 h-14 bg-slate-300/50 rounded-full text-center text-2xl"><i class="fa-brands fa-whatsapp" style="color: #7284a1;"></i></i></div>
-                        <div class="text-sm text-slate-400">Whatsapp</div>
-                    </div>
+                    <a href="#" onclick="showElement()">
+                        <div class="flex flex-col items-center">
+                            <div class="w-14 py-3 h-14 bg-slate-300/50 rounded-full text-center text-2xl"><i class="fa-brands fa-whatsapp" style="color: #7284a1;"></i></i></div>
+                            <div class="text-sm text-slate-400">Whatsapp</div>
+                        </div>
+                    </a>
                     <!-- <div class="flex flex-col">
                         <div class="w-14 py-3 h-14 bg-blue-100/50 rounded-full text-center text-2xl"><i class="fa-solid fa-award" style="color: #1952b3;"></i></div>
                         <div class="text-sm">E-Garansi</div>
@@ -74,7 +76,7 @@
     </div>
     <!-- Bottom Bar -->
     <div class="w-full bg-white shadow-md h-14 py-1 fixed bottom-0">
-        <div class="flex flex-row gap-2 justify-around">
+        <div class="flex flex-row gap-2 md:gap-9 justify-around md:justify-center">
             <div class="flex flex-col items-center">
                 <div><i class="fa-solid fa-house" style="color: #1952b3;"></i></div>
                 <div class="text-sm font-semibold text-blue-800">Beranda</div>
@@ -95,5 +97,29 @@
         </div>
     </div>
     <!-- End Bottom Bar -->
+    <!-- Notification system -->
+    <div class="w-full bg-white shadow-md h-96 py-1 px-3 fixed bottom-0 rounded-t-xl hidden" id="notification">
+        <div class="flex flex-col items-center">
+            <div><img src="/img/vc_cry.jpg" alt="" class="w-52 h-44 mb-5"></div>
+            <div class="font-semibold text-xl">Upgrade sekarang ke plus!</div>
+            <p class="text-slate-500 mb-5 text-center">Nikmati semua fitur dengan upgrade akun mu sekarang.</p>
+            <a href="" class="w-full py-3 px-3 bg-blue-700 rounded-full text-center text-white font-semibold mb-2">Upgrade</a>
+            <a href="#" onclick="hideElement()">Nanti Dulu</a>
+        </div>
+    </div>
+    <!-- End notification system -->
+
+    <script>
+        // Script JS for Notification bottom
+        function showElement(){
+            var notif = document.getElementById('notification');
+            notif.classList.remove("hidden");
+        }
+
+        function hideElement() {
+                var notif = document.getElementById('notification');
+                notif.classList.add("hidden");
+            }        
+    </script>
 </body>
 </html>
